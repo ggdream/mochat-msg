@@ -1,7 +1,9 @@
 import 'package:grpc/grpc.dart';
 import 'package:grpc/src/server/call.dart';
 
-import 'remote.pbgrpc.dart';
+import 'package:mochat_msg/db/init.dart';
+import 'package:mochat_msg/model/msg.dart';
+import 'package:mochat_msg/rpc/remote.pbgrpc.dart';
 
 
 class Remote extends RemoteServiceBase {
@@ -13,7 +15,10 @@ class Remote extends RemoteServiceBase {
 
   @override
   Future<Status> send(ServiceCall call, Record r) async {
-    print('${r.from}, ${r.to}, ${r.id}, ${r.time.toString()}');
+
+    var data = Recorder(r.id, r.from, r.to, r.time);
+    var res = await db.insert(data.toMap());
+    print(res);
     return Status(code: 0, message: "hello");
   }
 }

@@ -4,4 +4,5 @@ version: 0.1.0
 dependencies:
   grpc: ^2.9.0
   protobuf: ^1.1.1
+  mongo_dart: ^0.4.4
 

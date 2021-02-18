@@ -6,7 +6,8 @@ dart:
   - 2.10.4
 
 install:
+  - docker run -d -p 27017:27017 mongo:4.4.4
   - pub get
 
 script:
-  - echo "test my dart code"
+  - dart test/db.dart
