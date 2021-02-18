@@ -1,0 +1,7 @@
+name: mochat_msg
+version: 0.1.0
+
+dependencies:
+  grpc: ^2.9.0
+  protobuf: ^1.1.1
+

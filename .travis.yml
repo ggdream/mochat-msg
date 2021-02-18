@@ -1,0 +1,12 @@
+os: linux
+dist: focal
+
+language: dart
+dart:
+  - 2.10.4
+
+install:
+  - pub get
+
+script:
+  - echo "test my dart code"
